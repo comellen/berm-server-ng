@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Ride = require('../db').import('../models/ride');
 
 router.get('/getall', (req, res) => {
+    console.log(req);
     let owner = req.user.id;
     Ride.findAll({
             where: { owner: owner }
